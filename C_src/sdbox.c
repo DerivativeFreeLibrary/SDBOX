@@ -189,7 +189,7 @@ void linesearch(int i, int n, double *x, double *z, double *d, double alpha_max,
 	z[i] = x[i]+alpha_tilde*d[i]; 
 	fz = funct(n,z);
 	*nf = *nf+1;
-	while((alpha_tilde < alpha_max ) && (fz<=f-gamma*pow(alpha_tilde,2.0))){
+	while(((*alpha) < alpha_max ) && (fz<=f-gamma*pow(alpha_tilde,2.0))){
 		*f_ext = fz;
 		*alpha = alpha_tilde;
 		alpha_tilde = ( alpha_max < (*alpha)/delta ? alpha_max : (*alpha)/delta );

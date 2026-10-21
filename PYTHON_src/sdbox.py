@@ -71,7 +71,7 @@ def linesearch(i,n,x,z,d,alpha_max,alpha,gamma,f,fz,nf):
 	z[i] = x[i]+alpha_tilde*d[i] 
 	fz  = funct(z)
 	nf += 1
-	while (alpha_tilde < alpha_max ) and (fz<=f-gamma*alpha_tilde**2):
+	while (alpha < alpha_max ) and (fz<=f-gamma*alpha_tilde**2):
 		f_ext = fz
 		alpha = alpha_tilde
 		alpha_tilde = min(alpha_max,alpha/delta)

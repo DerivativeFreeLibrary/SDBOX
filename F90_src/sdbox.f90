@@ -188,7 +188,7 @@ SUBROUTINE linesearch(i,n,x,z,d,alpha_max,alpha,gamma,f,fz,f_ext,nf)
 	z(i) = x(i)+alpha_tilde*d(i) 
 	call funct(n,z,fz)
 	nf = nf+1
-	do while((alpha_tilde < alpha_max ).and.(fz<=f-gamma*alpha_tilde**2.d0))
+	do while((alpha < alpha_max ).and.(fz<=f-gamma*alpha_tilde**2.d0))
 		f_ext = fz
 		alpha = alpha_tilde
 		alpha_tilde = min(alpha_max,alpha/delta)
